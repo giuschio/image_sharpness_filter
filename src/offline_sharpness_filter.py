@@ -59,8 +59,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("input_dir", help="Absolute path to folder containing camera images.")
     parser.add_argument("output_dir", help="Absolute path to folder in which to export filtered images.")
-    parser.add_argument("--downsampling_factor", help="Absolute path to working directory. Used to store colmap workspace in _tmp_calibration. If no path is provided, the current directory will be used.")
-    parser.add_argument("--sharpness_threshold", help="Absolute path where the results should be saved. Must be a .txt file. If no path is provided, the camera info will be just printed in the terminal.")
+    parser.add_argument("--downsampling_factor", help="Size of downsampling window.")
+    parser.add_argument("--sharpness_threshold", help="Sharpnedd threshold: between 0 (allow all images) and 100.")
     args = parser.parse_args()
 
     filter = OfflineSharpnessFilter()
